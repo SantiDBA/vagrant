@@ -42,12 +42,12 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.88.tar.gz
-|   +--- apex_23.2_en.zip
+|   +--- apache-tomcat-9.0.98.tar.gz
+|   +--- apex_24.1_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- graalvm-jdk-17_linux-x64_bin.tar.gz
+|   +--- graalvm-jdk-21_linux-x64_bin.tar.gz
 |   +--- ords-latest.zip
-|   +--- p36209492_190000_Linux-x86-64.zip
+|   +--- p36866623_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
