@@ -1,10 +1,10 @@
-. /vagrant/config/install.env
+. /vagrant_config/install.env
 
 echo "******************************************************************************"
 echo "Unzip database software." `date`
 echo "******************************************************************************"
 cd ${ORACLE_HOME}
-unzip -oq /vagrant/software/${DB_SOFTWARE}
+unzip -oq /vagrant_software/${DB_SOFTWARE}
 
 echo "******************************************************************************"
 echo "Do database software-only installation." `date`
