@@ -1,4 +1,4 @@
-. /vagrant_config/install.env
+. /vagrant/config/install.env
 
 echo "******************************************************************************"
 echo "Create environment scripts." `date`

@@ -13,14 +13,14 @@ echo "Patching preparation was done during software installation." `date`
 echo "******************************************************************************"
 
 #cd ${ORACLE_HOME}
-#unzip -oq /vagrant_software/${OPATCH_FILE}
+#unzip -oq /vagrant/software/${OPATCH_FILE}
 #
 #echo "******************************************************************************"
 #echo "Unzip software." `date`
 #echo "******************************************************************************"
 #
 #cd ${SOFTWARE_DIR}
-#unzip -oq /vagrant_software/${PATCH_FILE}
+#unzip -oq /vagrant/software/${PATCH_FILE}
 
 echo "******************************************************************************"
 echo "Apply patches." `date`
