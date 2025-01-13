@@ -1,0 +1,74 @@
+cdb1.world =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ol8-19-dg1.localdomain)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = cdb1)
+    )
+  )
+
+cdb1_stby.world =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ol8-19-dg2.localdomain)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = cdb1)
+    )
+  )
+  
+
+JMST_SYSCON =
+  (DESCRIPTION =
+     (ADDRESS_LIST =
+       (FAILOVER = ON)
+       (LOAD_BALANCE = ON)
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oda01d2.bcg.ad.bcgov.us)(PORT = 1521))
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oda01dedc2.bcg.ad.bcgov.us)(PORT = 1521))
+     )
+     (CONNECT_DATA =
+       (SERVER = DEDICATED)
+       (SID = cdb1)
+       (FAILOVER_MODE =
+         (TYPE = SELECT) 
+         (METHOD = PRECONNECT) 
+         (RETRIES = 10)
+         (DELAY = 1)
+       )
+     )
+  )  
+
+JMST_HA =
+  (DESCRIPTION =
+     (ADDRESS_LIST =
+       (FAILOVER = ON)
+       (LOAD_BALANCE = ON)
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oda01d2.bcg.ad.bcgov.us)(PORT = 1521))
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oda01dedc2.bcg.ad.bcgov.us)(PORT = 1521))
+     )
+     (CONNECT_DATA =
+       (SERVICE_NAME = jmstHA.world)
+       (FAILOVER_MODE =
+         (TYPE = SELECT) 
+         (METHOD = PRECONNECT) 
+         (RETRIES = 10)
+         (DELAY = 1)
+       )
+     )
+  )   
+    
+JMST.world =
+  (DESCRIPTION =
+     (ADDRESS_LIST =
+       (FAILOVER = ON)
+       (LOAD_BALANCE = OFF)
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oda01d2.bcg.ad.bcgov.us)(PORT = 1521))
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oda01dedc2.bcg.ad.bcgov.us)(PORT = 1521))
+     )
+     (CONNECT_DATA =
+       (SERVICE_NAME = jmstHA)
+     )
+  )    
