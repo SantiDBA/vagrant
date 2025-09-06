@@ -50,12 +50,13 @@ JMST_HA =
        (ADDRESS = (PROTOCOL = TCP)(HOST = oda01dedc2.bcg.ad.bcgov.us)(PORT = 1521))
      )
      (CONNECT_DATA =
-       (SERVICE_NAME = jmstHA.world)
+       (SERVICE_NAME = cdb1.world)
        (FAILOVER_MODE =
          (TYPE = SELECT) 
          (METHOD = PRECONNECT) 
-         (RETRIES = 10)
-         (DELAY = 1)
+         (BACKUP=cdb1_stby.world)
+         (RETRIES = 100)
+         (DELAY = 3)
        )
      )
   )   
