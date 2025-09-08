@@ -1,0 +1,12 @@
+box: oraclebase/oracle-8
+# The vm_name and hostname are defined in the Vagrantfile
+# vm_name: dba_labs
+mem_size: 2048
+cpus: 1
+public_ip1: 192.168.56.140
+
+disk1_name: ./ol8_21_u01.vdi
+disk2_name: ./ol8_21_u02.vdi
+non_rotational: 'on'
+disk_size: 100
+# hostname: pg_node
