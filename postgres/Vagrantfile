@@ -12,6 +12,7 @@ var_public_ip1     = params['public_ip1']
 
 var_non_rotational = params['non_rotational']
 var_hostname       = params['hostname']
+var_pg_version     = params['pg_version']
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -93,6 +94,7 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    export PG_VERSION=#{var_pg_version}
     sh /vagrant/scripts/setup.sh
   SHELL
 

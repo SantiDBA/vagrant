@@ -9,4 +9,6 @@ disk1_name: ./ol8_21_u01.vdi
 disk2_name: ./ol8_21_u02.vdi
 non_rotational: 'on'
 disk_size: 100
-# hostname: pg_node
+hostname: pg_node
+# Available versions: 13, 14, 15, 16
+pg_version: 16
