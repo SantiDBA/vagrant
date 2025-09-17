@@ -11,4 +11,4 @@ non_rotational: 'on'
 disk_size: 100
 hostname: pg_node
 # Available versions: 13, 14, 15, 16
-pg_version: 16
+pg_version: 17
